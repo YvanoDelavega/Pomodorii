@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Pomodorii.web</PageTitle>
+
+@*mise en page par défaut*@
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <div class="container my-5">
+        @Body
+    </div>
+
+    <footer id="main-footer" class="text-center  fixed-bottom site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        &copy; Pomodorii @DateTime.UtcNow.Year
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

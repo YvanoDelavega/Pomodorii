@@ -1,0 +1,34 @@
+﻿@*page d'acceuil*@
+
+@page "/" 
+<h1 class="text-center">Pomodorii</h1>
+<p class="my-1 lead text-center">Bienvenu sur Pomodorii, le seul site de GTAO.</p>
+<div className="jumbotron">
+    
+    
+    <hr className="my-4" />
+    <div>
+        <h4>ça sert à quoi la GTAO ?</h4>
+        <p>
+            La GTAO, c'est de la Gestion de Tomates Assistée par Ordinateur
+        </p>
+        <p>
+            blabla
+        </p>
+        <p>
+            blabla
+        </p>
+    </div>
+
+    <p className="lead mt-5">
+        <NavLink href="mestomates" class="btn btn-primary" Match="NavLinkMatch.All">
+            <img src="img/tomate.png" width="50" />
+            <div>Mes tomates</div>
+        </NavLink>
+
+        <NavLink href="tomateEdit" class="btn btn-primary">
+            <img src="img/semi.png" width='50' />
+            <div>Mes semis</div>
+        </NavLink>
+    </p>
+</div>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VxmPHIVMGmTfqflsnZJXcrc7MJJMvwHZwcZ6VVA9eZo=",
+  "Source": "Pomodorii.Api",
+  "BasePath": "_content/Pomodorii.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

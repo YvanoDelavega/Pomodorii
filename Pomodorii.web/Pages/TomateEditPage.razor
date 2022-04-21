@@ -1,0 +1,60 @@
+﻿@page "/tomateEdit"
+@page "/tomateEdit/{tomateId:int}"
+
+@inherits TomateEditPageBase
+
+
+<EditForm EditContext=editContext OnValidSubmit=OnSubmit>
+    <h1>@(modeAjout ? "Ajouter" : "Modifier") une tomate</h1>
+
+    @if (isError)
+    {
+        <div class="alert alert-danger">Merci de renseigner les champs obligatoires</div>
+    }
+    <div class="form-group">
+        <label>Nom de la tomate</label>
+        <div>
+            <InputText @bind-Value="tomate.Nom" placeholder="cette information est obligtoire" class="form-control" />
+            <ValidationMessage For="@(() => tomate.Nom)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <div>
+            <InputText @bind-Value="tomate.Description" class="form-control" />
+            <ValidationMessage For="@(() => tomate.Description)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>URL de l'image</label>
+        <div>
+            <InputText @bind-Value="tomate.ImageUrl" class="form-control" />
+            <ValidationMessage For="@(() => tomate.ImageUrl)" />
+            <small class="form-text text-muted">(ex: https://static.aujardin.info/img/img3/tomates/montfavet-f1.gif)</small>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <button class="btn btn-primary" type="Submit" disabled=@isError>
+        @(modeAjout ? "Ajouter" : "Modifier") votre tomate
+    </button>
+
+
+    <br />
+    <br />
+
+    <DataAnnotationsValidator />
+</EditForm>
+
+
+@if (!modeAjout)
+{
+     <Button class="btn btn-warning" @onclick="DeleteTomate">Supprimer</Button>
+}
+
+@code{
+
+       
+}

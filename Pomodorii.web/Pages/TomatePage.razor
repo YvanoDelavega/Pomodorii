@@ -1,0 +1,36 @@
+﻿@page "/tomate/{tomateId:int}"
+@inherits TomatePageBase
+
+@*affiche le détail d'une tomate*@
+
+@if (isBusy)
+{
+    <div class="busy"></div>
+}
+else
+{
+    @if (Tomate == null || notFound)
+    {
+        <h1>aucune tomate trouvée :(</h1>
+        <img src="img/TomateTriste.png" alt="tomate" class="img-fluid w-30 mb-3">
+    }
+    else
+    {
+
+        <div class="row">
+            <div class="col-sm">
+                <img src="@ImgTomate" alt="tomate" class="img-fluid w-30 mb-3">
+            </div>
+            <div class="col-sm">
+                <h1>@Tomate.Nom</h1>
+                <h2>@Tomate.Description</h2>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <a class="btn btn-primary" href="@($"tomateEdit/{Tomate.Id}")">Modifier</a>
+
+    }
+}
