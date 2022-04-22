@@ -13,11 +13,13 @@ namespace Pomodorii.Models
         /// </summary>
         public int Id { get; set; }
 
-
         /// <summary>
         /// id de la tomate concernée
         /// </summary>
         public int TomateId { get; set; }
+
+
+        public Tomate Tomate { get; set; }
 
         /// <summary>
         /// date du semi

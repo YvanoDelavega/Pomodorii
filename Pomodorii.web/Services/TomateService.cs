@@ -30,9 +30,9 @@ namespace Pomodorii.Web.Services
             if (res.IsSuccessStatusCode)
             {
                 var resTomate = res.Content.ReadFromJsonAsync<Tomate>();
-                if (resTomate != null && resTomate.Result != null) return resTomate.Result.Id;               
-            }            
-            
+                if (resTomate != null && resTomate.Result != null) return resTomate.Result.Id;
+            }
+
             return -1;
         }
 
@@ -50,17 +50,7 @@ namespace Pomodorii.Web.Services
 
         public async Task<IEnumerable<Tomate>> GetTomates()
         {
-            try
-            {
-                var res = await httpClient.GetFromJsonAsync<Tomate[]>("api/tomates");
-                return res;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
-            
+            return await httpClient.GetFromJsonAsync<Tomate[]>("api/tomates");
         }
 
         public async Task<Tomate> UpdateTomate(Tomate updatedTomate)

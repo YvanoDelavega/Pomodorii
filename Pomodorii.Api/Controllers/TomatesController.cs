@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Pomodorii.Api.Controllers
 {
     /// <summary>
-    /// On crée un controller pour gérer notre API
+    /// On crée un controller pour gérer les routes http de notre API
     /// La route sera "api/tomates"
     /// on implémente les principales types de requete http pour gérer nos tomates : GET, POST, PUT, DELETE
     /// </summary>

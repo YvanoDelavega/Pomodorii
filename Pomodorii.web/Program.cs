@@ -19,6 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // fourni les instances utiles à l'application
 builder.Services.AddScoped<ITomateRepository, TomateRepository>();
 builder.Services.AddHttpClient<ITomateService, TomateService>();
+builder.Services.AddScoped<ISemiRepository, SemiRepository>();
+builder.Services.AddHttpClient<ISemiService, SemiService>();
 
 var app = builder.Build();
 
