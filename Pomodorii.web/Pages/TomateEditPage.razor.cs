@@ -28,18 +28,23 @@ namespace Pomodorii.web.Pages
         protected private bool modeAjout { get { return !tomateId.HasValue; } }
 
         protected bool isError = true;
+
+        /// <summary>
+        /// permet de gérer les erreurs dans le formulaire
+        /// </summary>
         protected private EditContext editContext;
 
         protected override void OnInitialized()
         {
             tomate = new Tomate();
-            // on crée le EditContext par défaut ici sinon ça va planter plus tard
+            // on crée un EditContext par défaut ici sinon ça va planter plus tard
             editContext = new(tomate);
             editContext.OnFieldChanged += HandleFieldChanged;
         }
 
         protected override async Task OnInitializedAsync()
         {
+            // charge la tomate avec son id existe
             if (tomateId.HasValue)
                 try
                 {
@@ -55,9 +60,10 @@ namespace Pomodorii.web.Pages
 
             if (!isError)
             {
-                // on libere le 1er editContext et on en recrée un
+                // on libere le 1er editContext et on en recrée un avec notre tomate fraichement chargées
                 Dispose();
                 editContext = new(tomate);
+                // lorsqu'un champ est modifié, on déclenche un evenement pour controler la validité du formulaire
                 editContext.OnFieldChanged += HandleFieldChanged;
             }
         }
@@ -80,14 +86,23 @@ namespace Pomodorii.web.Pages
             }
         }
 
+        /// <summary>
+        /// lorsqu'un champ perd le focus, on valide ou non l'état du formulaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void HandleFieldChanged(object sender, FieldChangedEventArgs e)
         {
             isError = !editContext.Validate();
             StateHasChanged();
         }
 
+        /// <summary>
+        /// lors du déchargement de la page
+        /// </summary>
         public void Dispose()
         {
+            // on désabonne l'evenement
             if (editContext != null) editContext.OnFieldChanged -= HandleFieldChanged;
         }
 

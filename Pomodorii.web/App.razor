@@ -7,6 +7,19 @@
         <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
              <p role="alert">Désolé, il n'y à rien ici...</p>
+             <p role="alert">Va voir ailleurs, rien ne te retient :</p>
+               <p className="lead mt-5">
+                <NavLink href="mestomates" class="btn btn-primary" Match="NavLinkMatch.All">                    
+                    <div>Mes tomates</div>
+                </NavLink>
+
+                <NavLink href="messemis" class="btn btn-primary">                    
+                    <div>Mes semis</div>
+                </NavLink>
+                <NavLink href="messemis" class="btn btn-primary">                    
+                    <div>Mes récoltes</div>
+                </NavLink>
+            </p>
         </LayoutView>
     </NotFound>
 </Router>

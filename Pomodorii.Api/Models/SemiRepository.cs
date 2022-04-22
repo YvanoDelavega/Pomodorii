@@ -23,11 +23,12 @@ namespace Pomodorii.Api.Models
         }
 
         /// <summary>
-        /// renvoi la liste des tomates
+        /// renvoi la liste des semis
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<Semi>> GetSemis()
         {
+            // on inclus les tomates associés au semi
             return await appDbContext.Semis.Include(t => t.Tomate).ToListAsync();
         }
     }

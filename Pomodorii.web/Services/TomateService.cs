@@ -16,6 +16,11 @@ namespace Pomodorii.Web.Services
     {
         private readonly HttpClient httpClient;
 
+        /// <summary>
+        /// constructeur
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="navigationManager"></param>
         public TomateService(HttpClient httpClient, NavigationManager navigationManager)
         {
             this.httpClient = httpClient;
@@ -23,6 +28,11 @@ namespace Pomodorii.Web.Services
             httpClient.BaseAddress = new Uri(navigationManager.BaseUri);
         }
 
+        /// <summary>
+        /// Appel de l'API pour créer une tomate
+        /// </summary>
+        /// <param name="newTomate"></param>
+        /// <returns></returns>
         public async Task<int> CreateTomate(Tomate newTomate)
         {
             var res = await httpClient.PostAsJsonAsync<Tomate>("api/tomates", newTomate);
@@ -36,11 +46,22 @@ namespace Pomodorii.Web.Services
             return -1;
         }
 
+        /// <summary>
+        /// Appel de l'API pour supprimer une tomate
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task DeleteTomate(int id)
         {
             await httpClient.DeleteAsync($"api/tomates/{id}");
         }
 
+        /// <summary>
+        /// Appel de l'API pour charge une tomate
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="AggregateException"></exception>
         public async Task<Tomate> GetTomate(int id)
         {
             var tomate = await httpClient.GetFromJsonAsync<Tomate>($"api/tomates/{id}");
@@ -48,16 +69,24 @@ namespace Pomodorii.Web.Services
             return tomate;
         }
 
+        /// <summary>
+        /// Appel de l'API pour charger toutes les tomates
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Tomate>> GetTomates()
         {
             return await httpClient.GetFromJsonAsync<Tomate[]>("api/tomates");
         }
 
+        /// <summary>
+        /// Appel de l'API pour modifier une tomate
+        /// </summary>
+        /// <param name="updatedTomate"></param>
+        /// <returns></returns>
         public async Task<Tomate> UpdateTomate(Tomate updatedTomate)
         {
             var res = await httpClient.PutAsJsonAsync<Tomate>("api/tomates", updatedTomate);
-            var t = await res.Content.ReadFromJsonAsync<Tomate>();
-            return t;
+            return await res.Content.ReadFromJsonAsync<Tomate>();
         }
     }
 }

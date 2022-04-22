@@ -18,7 +18,9 @@ namespace Pomodorii.Models
         /// </summary>
         public int TomateId { get; set; }
 
-
+        /// <summary>
+        /// tomate associé au semi
+        /// </summary>
         public Tomate Tomate { get; set; }
 
         /// <summary>

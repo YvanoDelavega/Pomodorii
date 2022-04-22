@@ -9,12 +9,17 @@ using Microsoft.AspNetCore.Components;
 namespace Pomodorii.Web.Services
 {
     /// <summary>
-    /// 
+    /// Service qui gérer l'api des semis
     /// </summary>
     public class SemiService : ISemiService
     {
         private readonly HttpClient httpClient;
 
+        /// <summary>
+        /// constructeur
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="navigationManager"></param>
         public SemiService(HttpClient httpClient, NavigationManager navigationManager)
         {
             this.httpClient = httpClient;
@@ -22,6 +27,10 @@ namespace Pomodorii.Web.Services
             httpClient.BaseAddress = new Uri(navigationManager.BaseUri);
         }
 
+        /// <summary>
+        /// Appel de l'API pour charger tous les semis
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Semi>> GetSemis()
         {
             return await httpClient.GetFromJsonAsync<Semi[]>("api/semis");

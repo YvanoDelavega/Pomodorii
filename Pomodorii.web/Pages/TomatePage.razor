@@ -1,22 +1,30 @@
-﻿@page "/tomate/{tomateId:int}"
+﻿@*affiche le détail d'une tomate*@
+@page "/tomate/{tomateId:int}"
 @inherits TomatePageBase
 
-@*affiche le détail d'une tomate*@
-
+@*busy indicator en attendant la fin de la requete*@
 @if (isBusy)
 {
     <div class="busy"></div>
 }
 else
 {
+    @*si aucune tomate n'est trouvée'*@
     @if (Tomate == null || notFound)
     {
-        <h1>aucune tomate trouvée :(</h1>
-        <img src="img/TomateTriste.png" alt="tomate" class="img-fluid w-30 mb-3">
+        <div class="my-5 text-center">
+            <div class="info-header mb-5">
+                <h1>aucune tomate trouvée :(</h1>
+                <img src="img/TomateTriste.png" alt="tomate" class="img-fluid w-30 mb-3">
+                <p>
+                    <a class="btn btn-danger" href="/mestomates">Retour</a>
+                </p>
+            </div>
+        </div>
     }
+    @* sinon on affiche la fiche détaillée de la tomate*@
     else
     {
-
         <div class="row">
             <div class="col-sm">
                 <img src="@ImgTomate" alt="tomate" class="img-fluid w-30 mb-3">

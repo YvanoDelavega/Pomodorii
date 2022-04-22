@@ -44,7 +44,7 @@
     <br>
 
     <div className="form-group">
-        <a class="btn btn-danger" href=@(tomate == null || tomate.Id <= 0 ? "mestomates" : "/tomate/@tomate.Id")>
+        <a class="btn btn-danger" href=@(tomate == null || tomate.Id <= 0 ? "mestomates" : $"/tomate/{tomate.Id}")>
             Retour
         </a>
         <button class="btn btn-primary m-4" type="Submit" disabled=@isError>
