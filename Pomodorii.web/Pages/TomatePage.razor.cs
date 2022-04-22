@@ -13,6 +13,9 @@ namespace Pomodorii.web.Pages
         [Inject]
         public ITomateService TomateService { get; set; }
 
+        [Inject]
+        NavigationManager NavigationManager { get; set; }
+
         public Tomate? Tomate { get; set; }
         [Parameter]
         public int? tomateId { get; set; }
@@ -39,8 +42,15 @@ namespace Pomodorii.web.Pages
         }
 
 
-        
+        public async void DeleteTomate()
+        {
+            if (Tomate != null)
+            {
+                await TomateService.DeleteTomate(Tomate.Id);
+                NavigationManager.NavigateTo("/mestomates");
+            }
+        }
 
-        
+
     }
 }

@@ -30,7 +30,15 @@ else
         <br>
         <br>
 
-        <a class="btn btn-primary" href="@($"tomateEdit/{Tomate.Id}")">Modifier</a>
+        <div class="d-flex justify-content-between align-items-center mb-3 mt-1">
+            <div className="form-group">
+                <a class="btn btn-danger" href="/mestomates">
+                    Retour
+                </a>
+                <a class="btn btn-primary m-4" href="@($"tomateEdit/{Tomate.Id}")">Modifier</a>
 
+            </div>
+            <Button class="btn btn-warning" @onclick="DeleteTomate">Supprimer</Button>
+        </div>
     }
 }

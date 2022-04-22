@@ -18,10 +18,7 @@ C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\bin\Debug\net6.0\P
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\bin\Debug\net6.0\Pomodorii.Models.pdb
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\scopedcss\bundle\Pomodorii.web.styles.css
-C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\scopedcss\projectbundle\Pomodorii.web.bundle.scp.css
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\Pomodorii.web.csproj.CopyComplete
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\Pomodorii.web.dll
 C:\Users\yvan_\Downloads\__blazor\dev\Pomodorii\Pomodorii.web\obj\Debug\net6.0\refint\Pomodorii.web.dll

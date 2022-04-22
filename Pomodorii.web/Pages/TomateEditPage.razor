@@ -37,9 +37,15 @@
 
     <br>
     <br>
-    <button class="btn btn-primary" type="Submit" disabled=@isError>
-        @(modeAjout ? "Ajouter" : "Modifier") votre tomate
-    </button>
+
+    <div className="form-group">
+        <a class="btn btn-danger" href=@(tomate == null || tomate.Id <= 0 ? "mestomates" : "/tomate/@tomate.Id")>
+            Retour
+        </a>
+        <button class="btn btn-primary m-4" type="Submit" disabled=@isError>
+            @(modeAjout ? "Ajouter" : "Modifier") votre tomate
+        </button>
+    </div>
 
 
     <br />
@@ -47,14 +53,3 @@
 
     <DataAnnotationsValidator />
 </EditForm>
-
-
-@if (!modeAjout)
-{
-     <Button class="btn btn-warning" @onclick="DeleteTomate">Supprimer</Button>
-}
-
-@code{
-
-       
-}

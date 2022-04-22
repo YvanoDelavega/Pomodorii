@@ -80,19 +80,6 @@ namespace Pomodorii.web.Pages
             }
         }
 
-
-
-        public async void DeleteTomate()
-        {
-            if (tomate != null)
-            {
-                await TomateService.DeleteTomate(tomate.Id);
-                NavigationManager.NavigateTo("/");
-            }
-        }
-
-
-
         public void HandleFieldChanged(object sender, FieldChangedEventArgs e)
         {
             isError = !editContext.Validate();
