@@ -39,7 +39,7 @@ builder.Services.AddServerSideBlazor();
 
 // Replace with your connection string.
 //var connectionString = "mysql://root:root@127.0.0.1:3306/easypingplus"; //"server=localhost;user=root;password=1234;database=ef";
-var connectionString = builder.Configuration.GetConnectionString("DBConnection");
+var connectionString = builder.Configuration["DBConnection"];//.GetConnectionString("DBConnection");
 //var connectionString = builder.Configuration.GetConnectionString("DBConnectionMySQL");
 //var connectionString = "server=127.0.0.1;port=3306;user=root;password=root;database=easypingplus";
 //var connectionString = "server=oliadkuxrl9xdugh.chr7pe7iynqr.eu-west-1.rds.amazonaws.com;port=3306;user=ye4z4u7mdlu8enwh;password=biql1dm5jnz2jlcg;database=c084srtqiisxknq4";
